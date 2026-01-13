@@ -263,13 +263,18 @@
         <input type="text" placeholder="Ваше ім'я" style="width: 90%; padding: 12px; margin-bottom: 15px; background: #121212; border: 1px solid #444; color: white; border-radius: 8px;">
         <input type="tel" placeholder="Ваш телефон" style="width: 90%; padding: 12px; margin-bottom: 25px; background: #121212; border: 1px solid #444; color: white; border-radius: 8px;">
         <button onclick="sendSuccess()" class="btn" style="width: 100%; border: none; cursor: pointer;">ВІДПРАВИТИ</button>
-         <div>
+<div class="contact-section" style="text-align: center; margin-top: 40px;">
     <h2>Контакти</h2>
     <p>Наша адреса: с.Княжичі, вулиця Слави</p>
-    <a href="https://t.me/donnazaferon" class="telegram-btn">Написати нам в Telegram 📱</a>
-    <a href=tel:"0937109394" class="action-btn call-style"> Зателефонувати нам 📞</a>
+    
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+        
+        <a href="tel:+380937109394" class="btn" style="margin: 0; min-width: 180px;">📞 Зателефонувати</a>
+        
+        <a href="https://t.me/donnazaferon" class="btn" style="margin: 0; min-width: 180px;">📱 Написати нам</a>
+        
+    </div>
 </div>
-
 <div>
     <h2>Наші роботи</h2>
     <img src="car.jpg" alt="ремонт авто">
@@ -350,6 +355,7 @@ function closeModal() {
 </body>
 
 </html>
+
 
 
 
