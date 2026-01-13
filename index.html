@@ -192,6 +192,40 @@
     cursor: pointer;
     color: #FF5722;
 }
+    .contact-buttons-container {
+    display: flex;
+    gap: 15px; /* Відстань між кнопками */
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Для зручності на мобільних */
+}
+
+.action-btn {
+    padding: 12px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease;
+    min-width: 160px;
+    text-align: center;
+}
+
+.call-style {
+    background-color: #28a745; /* Зелений колір для дзвінків */
+    border: 1px solid #218838;
+}
+
+.tg-style {
+    background-color: #0088cc; /* Синій колір Telegram */
+    border: 1px solid #0077b5;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    opacity: 0.9;
+}
     </style>
 </head>
 <body>
@@ -234,7 +268,8 @@
          <div>
     <h2>Контакти</h2>
     <p>Наша адреса: с.Княжичі, вулиця Слави</p>
-    <a href="https://t.me/donnazaferon" class="telegram-btn">Написати нам в Telegram</a>
+    <a href="https://t.me/donnazaferon" class="telegram-btn">Написати нам в Telegram 📱</a>
+    <a href=tel:"0937109394" class="action-btn call-style"> Зателефонувати нам 📞</a>
 </div>
 
 <div>
@@ -255,6 +290,30 @@
         <p id="modal-desc">Антикорозійна обробка авто — це комплекс заходів із нанесення спеціальних захисних складів на металеві поверхні автомобіля для запобігання або зупинки процесу руйнування металу (корозії) під впливом вологи, солі та агресивного середовища, що включає обробку днища, арок, порогів та прихованих порожнин</p>
     </div>
 <script>
+    function openModal(serviceType) {
+    const modal = document.getElementById('service-modal');
+    const title = document.getElementById('modal-title');
+    const desc = document.getElementById('modal-desc');
+
+    const descriptions = {
+        'anticor': {
+            name: '🛡️ Антикорозійна обробка',
+            text: 'Ми очищаємо днище від іржі, наносимо перетворювач та захисний шар бітумної мастики.'
+        },
+        'welding': {
+            name: '👨‍🏭 Зварювальні роботи',
+            text: 'Ремонт порогів, арок та днища. Використовуємо напівавтоматичне зварювання для міцності.'
+        },
+        'suspension': {
+            name: '⚙️ Ремонт ходової',
+            text: 'Повна діагностика підвіски, заміна важелів, амортизаторів та сайлентблоків.'
+        }
+    };
+
+    title.innerText = descriptions[serviceType].name;
+    desc.innerText = descriptions[serviceType].text;
+    modal.style.display = 'block';
+}
     function openModal(service) {
     const modal = document.getElementById('service-modal');
     const title = document.getElementById('modal-title');
@@ -293,6 +352,7 @@ function closeModal() {
 </body>
 
 </html>
+
 
 
 
