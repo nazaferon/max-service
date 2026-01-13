@@ -113,6 +113,42 @@
     color: #444;
 }
 }
+       /* Стилі для нового блоку послуг */
+.new-services-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap; /* Щоб картки переносилися на мобілках */
+}
+
+.service-item {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    padding: 25px 40px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.3s ease;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+.service-item:hover {
+    border-color: #FF5722;
+    background: #252525;
+    transform: translateY(-5px); /* Ефект підстрибування */
+    box-shadow: 0 10px 20px rgba(255, 87, 34, 0.1);
+}
     </style>
 </head>
 <body>
@@ -152,6 +188,23 @@
         <input type="text" placeholder="Ваше ім'я" style="width: 90%; padding: 12px; margin-bottom: 15px; background: #121212; border: 1px solid #444; color: white; border-radius: 8px;">
         <input type="tel" placeholder="Ваш телефон" style="width: 90%; padding: 12px; margin-bottom: 25px; background: #121212; border: 1px solid #444; color: white; border-radius: 8px;">
         <button onclick="sendSuccess()" class="btn" style="width: 100%; border: none; cursor: pointer;">ВІДПРАВИТИ</button>
+         <div>
+    <h2>Контакти</h2>
+    <p>Наша адреса: с.Княжичі, вулиця Слави</p>
+    <a href="https://t.me/donnazaferon">Написати нам</a>
+</div>
+
+<div>
+    <h2>Наші роботи</h2>
+    <img src="car.jpg" alt="ремонт авто">
+</div>
+    <div class="new-services-section">
+    <h2 class="section-title">Наші послуги</h2>
+    <ul class="services-grid">
+    <li class="service-item">🛡️ Антикор</li>
+    <li class="service-item">👨‍🏭 Зварювання</li>
+    <li class="service-item">⚙️ Ремонт ходової</li>
+</ul>
     </div>
 <script>
     function sendSuccess() {
@@ -169,5 +222,7 @@
     </div>
 </footer>
 </script>
+   
 </body>
+
 </html>
