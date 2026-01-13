@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Max Service — СТО</title>
+   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+   <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif /* Основний текст */;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #FF5722; /* Наш новий оранжевий */
+            font-size: 50px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(255, 87, 34, 0.3);
+            font-family: 'Oswald', sans-serif; /* Заголовок стане потужним */
+        }
+
+        .subtitle {
+            color: #888;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Контейнер для карток */
+        .services {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Стиль кожної картки */
+        .card {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            padding: 30px;
+            width: 200px;
+            border-radius: 50px
+            text-align: center;
+            transition: 0.4s; /* Плавність */
+        }
+
+        .card:hover {
+            border-color: #FF5722;
+            transform: translateY(-10px); /* Картка "підстрибує" */
+            box-shadow: 0 10px 30px rgba(255, 87, 34, 0.2);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .btn {
+            margin-top: 50px;
+            background-color: #FF5722;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e64a19;
+            box-shadow: 0 0 20px #FF5722;
+        }
+        .map-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    border: 2px solid #333;
+    border-radius: 17px;
+    overflow: hidden; /* Щоб карта не вилазила за закруглені краї */
+    .main-footer {
+    background-color: #0a0a0a; /* Ще темніший за основний фон */
+    color: #888;
+    width: 100%;
+    padding: 40px 0 20px 0;
+    margin-top: 80px;
+    text-align: center;
+    border-top: 2px solid #FF5722; /* Помаранчева лінія зверху для стилю */
+}
+
+.footer-logo {
+    color: #FF5722;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    margin: 15px 0;
+    color: #FF5722;
+    cursor: pointer;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #444;
+}
+}
+    </style>
+</head>
+<body>
+
+    <h1>MAX SERVICE</h1>
+    <p class="subtitle">Професійне обслуговування авто</p>
+
+    <div class="services">
+        <div class="card">
+            <span class="icon">🛡️</span>
+            <h3>Антикор</h3>
+            <p>Захист від іржі</p>
+        </div>
+        <div class="card">
+            <span class="icon">⚙️</span>
+            <h3>Ходова</h3>
+            <p>Діагностика та ремонт</p>
+        </div>
+        <div class="card">
+            <span class="icon">👨‍焊接</span>
+            <h3>Зварювання</h3>
+            <p>Аргон та напівавтомат</p>
+        </div>
+    </div>
+
+    <a href="tel:0937109394" class="btn">ЗАТЕЛЕФОНУВАТИ ЗАРАЗ</a>
+    <h2 style="margin-top: 60px; color: #FF5722; font-family: 'Oswald'; text-align: center;">ЯК НАС ЗНАЙТИ</h2>
+    <div class="map-container" style="width: 100%; max-width: 900px; margin: 20px auto; border: 2px solid #333; border-radius: 15px; overflow: hidden;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.123456789!2d30.5234!3d50.4501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDI3JzAwLjQiTiAzMMKwMzEnMjQuMiJF!5e0!3m2!1suk!2sua!4v1600000000000!5m2!1suk!2sua" 
+            width="100%" height="400" style="border:0; filter: grayscale(1) invert(1) contrast(1.2);" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+
+    <div class="booking-section" style="background: #1e1e1e; padding: 40px; border-radius: 20px; border: 1px solid #333; width: 100%; max-width: 400px; margin: 50px auto; text-align: center;">
+        <h2 style="color: #FF5722; font-family: 'Oswald'; margin-bottom: 20px;">ЗАПИСАТИСЯ НА СЕРВІС</h2>
+        <input type="text" placeholder="Ваше ім'я" style="width: 90%; padding: 12px; margin-bottom: 15px; background: #121212; border: 1px solid #444; color: white; border-radius: 8px;">
+        <input type="tel" placeholder="Ваш телефон" style="width: 90%; padding: 12px; margin-bottom: 25px; background: #121212; border: 1px solid #444; color: white; border-radius: 8px;">
+        <button onclick="sendSuccess()" class="btn" style="width: 100%; border: none; cursor: pointer;">ВІДПРАВИТИ</button>
+    </div>
+<script>
+    function sendSuccess() {
+        alert("Дякуємо! Ваша заявка прийнята. Майстер Max Service зателефонує вам протягом 10 хвилин.");
+    }
+    <footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-logo">MAX SERVICE</div>
+        <p>Професійний догляд за вашим авто з 2010 року</p>
+        <div class="social-links">
+            <span>Instagram</span> • <span>Facebook</span> • <span>TikTok</span>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+        <p class="copyright">© 2026 Max Service. Всі права захищені.</p>
+    </div>
+</footer>
+</script>
+</body>
+</html>
