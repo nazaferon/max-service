@@ -148,6 +148,22 @@
     background: #252525;
     transform: translateY(-5px); /* Ефект підстрибування */
     box-shadow: 0 10px 20px rgba(255, 87, 34, 0.1);
+    .telegram-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #0088cc; /* Фірмовий колір Telegram */
+    color: white;
+    text-decoration: none; /* Прибираємо підкреслення */
+    border-radius: 50px; /* Округлі краї */
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.telegram-btn:hover {
+    background-color: #00aaff; /* Світлішає при наведенні */
+    transform: scale(1.05); /* Трішки збільшується */
+}
 }
     </style>
 </head>
@@ -191,7 +207,7 @@
          <div>
     <h2>Контакти</h2>
     <p>Наша адреса: с.Княжичі, вулиця Слави</p>
-    <a href="https://t.me/donnazaferon">Написати нам</a>
+    <a href="https://t.me/donnazaferon" class="telegram-btn">Написати нам в Telegram</a>
 </div>
 
 <div>
@@ -226,5 +242,6 @@
 </body>
 
 </html>
+
 
 
