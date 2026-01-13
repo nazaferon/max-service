@@ -164,6 +164,33 @@
     background-color: #00aaff; /* Світлішає при наведенні */
     transform: scale(1.05); /* Трішки збільшується */
 }
+    .modal {
+    display: none; /* Сховано за замовчуванням */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #1e1e1e;
+    margin: 15% auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 500px;
+    border: 2px solid #FF5722;
+    border-radius: 20px;
+    color: white;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #FF5722;
 }
     </style>
 </head>
@@ -213,16 +240,40 @@
 <div>
     <h2>Наші роботи</h2>
     <img src="car.jpg" alt="ремонт авто">
-</div>
-    <div class="new-services-section">
+<div class="new-services-section">
     <h2 class="section-title">Наші послуги</h2>
     <ul class="services-grid">
-    <li class="service-item">🛡️ Антикор</li>
-    <li class="service-item">👨‍🏭 Зварювання</li>
-    <li class="service-item">⚙️ Ремонт ходової</li>
-</ul>
+        <li class="service-item" onclick="openModal('anticor')">🛡️ Антикор</li>
+        <li class="service-item" onclick="openModal('welding')">👨‍🏭 Зварювання</li>
+        <li class="service-item" onclick="openModal('suspension')">⚙️ Ремонт ходової</li>
+    </ul>
+</div>
+        <div id="service-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title">Антикор</h2>
+        <p id="modal-desc">Антикорозійна обробка авто — це комплекс заходів із нанесення спеціальних захисних складів на металеві поверхні автомобіля для запобігання або зупинки процесу руйнування металу (корозії) під впливом вологи, солі та агресивного середовища, що включає обробку днища, арок, порогів та прихованих порожнин</p>
     </div>
 <script>
+    function openModal(service) {
+    const modal = document.getElementById('service-modal');
+    const title = document.getElementById('modal-title');
+    const desc = document.getElementById('modal-desc');
+
+    if (service === 'anticor') {
+        title.innerText = '🛡️ Антикорозійна обробка';
+        desc.innerText = 'Ми проводимо повне очищення днища від іржі, наносимо захисний шар та обробляємо приховані порожнини.';
+    } else if (service === 'welding') {
+        title.innerText = '👨‍🏭 Зварювання';
+        desc.innerText = 'Професійне зварювання кузова, ремонт порогів та підсилювачів будь-якої складності.';
+    }
+
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('service-modal').style.display = 'none';
+}
     function sendSuccess() {
         alert("Дякуємо! Ваша заявка прийнята. Майстер Max Service зателефонує вам протягом 10 хвилин.");
     }
@@ -242,6 +293,7 @@
 </body>
 
 </html>
+
 
 
 
