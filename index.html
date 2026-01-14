@@ -255,6 +255,26 @@
         .btn {
             transition: all 0.3 ease;
         }
+    .container {
+    max-width: 1200px; /* Сайт не буде розповзатися на весь монітор */
+    margin: 0 auto;    /* Центруємо весь контент */
+    padding: 20px;
+}
+    /* Це змусить блоки ставати в ряд, а не один під одним */
+.services-container, .route-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 600px; /* Обмежуємо ширину секції */
+    margin: 20px auto;
+}
+
+/* Самі картки та кнопка маршруту */
+.service-item, .route-section .btn {
+    width: 100%;       /* На мобільних — на весь екран */
+    max-width: 300px;  /* На комп'ютері — не більше 300 пікселів */
+}
     </style>
 </head>
 <body>
@@ -347,6 +367,7 @@
 </body>
 
 </html>
+
 
 
 
