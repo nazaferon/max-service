@@ -284,12 +284,7 @@
         <input type="tel" class="form-input" placeholder="Ваш телефон"> 
         <button onclick="sendOrder()" class="btn" style="width: 100%; border: none; cursor: pointer;">ВІДПРАВИТИ</button>
 <div class="contact-section" style="text-align: center; margin-top: 40px;">
-    <div class="order-form">
-        <h3>ЗАЛИШИТИ ЗАЯВКУ НА ВІДГУК</h3>
-        <input type="text" placeholder=Ваше ім`я>
-        <input type="tel" placeholder=Ваш номер телефону>
-        <button class="btn" style="width: 100%; margin-top: 10px">Відправити</button>
-    </div>
+    
     <h2>Контакти</h2>
     <p>Наша адреса: с.Княжичі, вулиця Слави</p>
     
@@ -306,15 +301,6 @@
     <div class="instagram-box">
     <a href="https://www.instagram.com/reel/DCY_muXNIOd/" class="btn" target="_blank">Наші роботи в INSTAGRAM</a>
     </div>
-</div>
-<div class="new-services-section">
-    <h2 class="section-title">Наші послуги</h2>
-    <ul class="services-grid">
-        <li class="service-item" onclick="openModal('anticor')">🛡️ Антикор</li>
-<li class="service-item" onclick="openModal('welding')">👨‍🏭 Зварювання</li>
-<li class="service-item" onclick="openModal('suspension')">⚙️ Ремонт ходової</li>
-    </ul>
-</div>
         <div id="service-modal" class="modal">
    <div class="modal-content">
         <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -325,6 +311,12 @@
         <h2 id="modal-title">Зварювання</h2>
         <p id="modal-desc">Зварювання — це технологічний процес створення нероз'ємного з'єднання між матеріалами (найчастіше металами) шляхом їх нагрівання та/або пластичного деформування, що призводить до утворення міцних міжмолекулярних зв'язків, іноді з додаванням присадкового матеріалу та захистом від навколишнього середовища.</p>
          </div>
+            <div class="order-form">
+        <h3>ЗАЛИШИТИ ЗАЯВКУ НА ВІДГУК</h3>
+        <input type="text" placeholder=Ваше ім`я>
+        <input type="tel" placeholder=Ваш номер телефону>
+        <button class="btn" style="width: 100%; margin-top: 10px">Відправити</button>
+    </div>
 <script>
     function sendOrder() {
     const name = document.querySelector('input[type="text"]').value;
@@ -346,6 +338,7 @@
 </body>
 
 </html>
+
 
 
 
