@@ -282,7 +282,7 @@
         <h2 style="color: #FF5722; font-family: 'Oswald'; margin-bottom: 20px;">ЗАПИСАТИСЯ НА СЕРВІС</h2>
         <input type="text" class="form-input" placeholder="Ваше ім'я">  
         <input type="tel" class="form-input" placeholder="Ваш телефон"> 
-        <button onclick="sendSuccess()" class="btn" style="width: 100%; border: none; cursor: pointer;">ВІДПРАВИТИ</button>
+        <button onclick="sendOrder()" class="btn" style="width: 100%; border: none; cursor: pointer;">ВІДПРАВИТИ</button>
 <div class="contact-section" style="text-align: center; margin-top: 40px;">
     <div class="order-form">
         <h3>ЗАЛИШИТИ ЗАЯВКУ НА ВІДГУК</h3>
@@ -333,6 +333,17 @@
         <button class="btn" onclick="closeModal()" style="width: 100%;">Закрити</button>
     </div>
 <script>
+    function sendOrder() {
+        const name = document.querySelector(`input[type="text"]`.value;
+        const phone = document.querySelector('input[type="tel"]').value;
+        if (name === "" || phone === "") {
+        alert("Будь ласка, заповніть усі поля!");
+        return;
+        }
+        alert("Дякуємо, " + name + "! Ваша заявка прийнята. Ми зателефонуємо вам на номер: " + phone);
+        document.querySelector('input[type="text"]').value = "";
+    document.querySelector('input[type="tel"]').value = "";
+    }
     function openModal(service) {
     const modal = document.getElementById('service-modal');
     const title = document.getElementById('modal-title');
@@ -416,6 +427,7 @@ function closeModal() {
 </body>
 
 </html>
+
 
 
 
