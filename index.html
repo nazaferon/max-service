@@ -316,109 +316,37 @@
     </ul>
 </div>
         <div id="service-modal" class="modal">
-   <div id="service-modal" class="modal">
-    <div class="modal-content">
+   <div class="modal-content">
         <span class="close-btn" onclick="closeModal()">&times;</span>
-        <h2 id="modal-title"></h2>
-        <p id="modal-desc"></p>
-        <button class="btn" onclick="closeModal()" style="width: 100%;">Закрити</button>
-    </div>
+        <h2 id="modal-title">Антикор</h2>
+        <p id="modal-desc">Антикорозійна обробка авто — це комплекс заходів із нанесення спеціальних захисних складів на металеві поверхні автомобіля для запобігання або зупинки процесу руйнування металу (корозії) під впливом вологи, солі та агресивного середовища, що включає обробку днища, арок, порогів та прихованих порожнин</p>
+        <h2 id="modal-title">Ремонт ходової</h2>
+        <p id="modal-desc">Ремонт ходової – це комплекс робіт з діагностики та відновлення ключових елементів підвіски та рульового управління автомобіля (амортизатори, пружини, важелі, сайлентблоки, кульові опори, підшипники, ШРУСи, рульові тяги), що забезпечує безпеку, керованість та комфорт руху, усуваючи стуки, вібрації та покращуючи зчеплення коліс з дорогою. Він включає заміну зношених деталей, регулювання кутів установки коліс ( розвал-сходження ), балансування коліс та ремонт гальмівної системи</p>
+        <h2 id="modal-title">Зварювання</h2>
+        <p id="modal-desc">Зварювання — це технологічний процес створення нероз'ємного з'єднання між матеріалами (найчастіше металами) шляхом їх нагрівання та/або пластичного деформування, що призводить до утворення міцних міжмолекулярних зв'язків, іноді з додаванням присадкового матеріалу та захистом від навколишнього середовища.</p>
+         </div>
 <script>
     function sendOrder() {
-        const name = document.querySelector(`input[type="text"]`.value;
-        const phone = document.querySelector('input[type="tel"]').value;
-        if (name === "" || phone === "") {
+    const name = document.querySelector('input[type="text"]').value;
+    const phone = document.querySelector('input[type="tel"]').value;
+
+    if (name === "" || phone === "") {
         alert("Будь ласка, заповніть усі поля!");
         return;
-        }
-        alert("Дякуємо, " + name + "! Ваша заявка прийнята. Ми зателефонуємо вам на номер: " + phone);
-        document.querySelector('input[type="text"]').value = "";
-        document.querySelector('input[type="tel"]').value = "";
     }
+
+    alert("Дякуємо, " + name + "! Ваша заявка прийнята. Номер: " + phone);
     
-    function openModal(service) {
-    const modal = document.getElementById('service-modal');
-    const title = document.getElementById('modal-title');
-    const desc = document.getElementById('modal-desc');
-
-    if (service === 'anticor') {
-        title.innerText = '🛡️ Антикор';
-        desc.innerText = 'Ми проводимо повну чистку днища та наносимо захисний шар, щоб авто не гнило.';
-    } else if (service === 'welding') {
-        title.innerText = '👨‍🏭 Зварювання';
-        desc.innerText = 'Ремонт порогів та днища будь-якої складності.';
-    } else if (service === 'suspension') {
-        title.innerText = '⚙️ Ремонт ходової';
-        desc.innerText = 'Діагностика та заміна запчастин підвіски.';
-    }
-    modal.style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('service-modal').style.display = 'none';
-}
-    function openModal(serviceType) {
-    const modal = document.getElementById('service-modal');
-    const title = document.getElementById('modal-title');
-    const desc = document.getElementById('modal-desc');
-
-    const descriptions = {
-        'anticor': {
-            name: '🛡️ Антикора',
-            text: 'Ми очищаємо днище від іржі, наносимо перетворювач та захисний шар бітумної мастики.'
-        },
-        'welding': {
-            name: '👨‍🏭 Зварювання',
-            text: 'Ремонт порогів, арок та днища. Використовуємо напівавтоматичне зварювання для міцності.'
-        },
-        'suspension': {
-            name: '⚙️ Ремонт ходової',
-            text: 'Повна діагностика підвіски, заміна важелів, амортизаторів та сайлентблоків.'
-        }
-    };
-
-    title.innerText = descriptions[serviceType].name;
-    desc.innerText = descriptions[serviceType].text;
-    modal.style.display = 'block';
-}
-    function openModal(service) {
-    const modal = document.getElementById('service-modal');
-    const title = document.getElementById('modal-title');
-    const desc = document.getElementById('modal-desc');
-
-    if (service === 'anticor') {
-        title.innerText = '🛡️ Антикор';
-        desc.innerText = 'Ми проводимо повне очищення днища від іржі, наносимо захисний шар та обробляємо приховані порожнини.';
-    } else if (service === 'welding') {
-        title.innerText = '👨‍🏭 Зварювання';
-        desc.innerText = 'Професійне зварювання кузова, ремонт порогів та підсилювачів будь-якої складності.';
-    }
-
-    modal.style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('service-modal').style.display = 'none';
-}
-    function sendSuccess() {
-        alert("Дякуємо! Ваша заявка прийнята. Майстер Max Service зателефонує вам протягом 10 хвилин.");
-    }
-    <footer class="main-footer">
-    <div class="footer-content">
-        <div class="footer-logo">MAX SERVICE</div>
-        <p>Професійний догляд за вашим авто з 2010 року</p>
-        <div class="social-links">
-            <span>Instagram</span> • <span>Facebook</span> • <span>TikTok</span>
-        </div>
-        <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
-        <p class="copyright">© 2026 Max Service. Всі права захищені.</p>
-    </div>
-</footer>
+    
+    document.querySelector('input[type="text"]').value = "";
+    document.querySelector('input[type="tel"]').value = "";
+} 
 </script>
    
 </body>
 
 </html>
+
 
 
 
