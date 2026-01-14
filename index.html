@@ -5,6 +5,15 @@
     <title>Max Service — СТО</title>
    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
    <style>
+       .form-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #121212;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 8px;
+}
         body {
             background-color: #121212;
             color: #ffffff;
@@ -271,12 +280,12 @@
 
     <div class="booking-section" style="background: #1e1e1e; padding: 40px; border-radius: 20px; border: 1px solid #333; width: 100%; max-width: 400px; margin: 50px auto; text-align: center;">
         <h2 style="color: #FF5722; font-family: 'Oswald'; margin-bottom: 20px;">ЗАПИСАТИСЯ НА СЕРВІС</h2>
-        <input type="text" placeholder="Ваше ім'я" style="width: 90%; padding: 12px; margin-bottom: 15px; background: #121212; border: 1px solid #444; color: white; border-radius: 8px;">
-        <input type="tel" placeholder="Ваш телефон" style="width: 90%; padding: 12px; margin-bottom: 25px; background: #121212; border: 1px solid #444; color: white; border-radius: 8px;">
+        <input type="text" class="form-input" placeholder="Ваше ім'я">  
+        <input type="tel" class="form-input" placeholder="Ваш телефон"> 
         <button onclick="sendSuccess()" class="btn" style="width: 100%; border: none; cursor: pointer;">ВІДПРАВИТИ</button>
 <div class="contact-section" style="text-align: center; margin-top: 40px;">
     <div class="order-form">
-        <h3>Залишити заявку</h3>
+        <h3>ЗАЛИШИТИ ЗАЯВКУ НА ВІДГУК</h3>
         <input type="text" placeholder=Ваше ім`я>
         <input type="tel" placeholder=Ваш номер телефону>
         <button class="btn" style="width: 100%; margin-top: 10px">Відправити</button>
@@ -407,6 +416,7 @@ function closeModal() {
 </body>
 
 </html>
+
 
 
 
