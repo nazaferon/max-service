@@ -282,8 +282,8 @@
     <h2 class="section-title">Наші послуги</h2>
     <ul class="services-grid">
         <li class="service-item" onclick="openModal('anticor')">🛡️ Антикор</li>
-        <li class="service-item" onclick="openModal('welding')">👨‍🏭 Зварювання</li>
-        <li class="service-item" onclick="openModal('suspension')">⚙️ Ремонт ходової</li>
+<li class="service-item" onclick="openModal('welding')">👨‍🏭 Зварювання</li>
+<li class="service-item" onclick="openModal('suspension')">⚙️ Ремонт ходової</li>
     </ul>
 </div>
         <div id="service-modal" class="modal">
@@ -292,7 +292,35 @@
         <h2 id="modal-title">Антикор</h2>
         <p id="modal-desc">Антикорозійна обробка авто — це комплекс заходів із нанесення спеціальних захисних складів на металеві поверхні автомобіля для запобігання або зупинки процесу руйнування металу (корозії) під впливом вологи, солі та агресивного середовища, що включає обробку днища, арок, порогів та прихованих порожнин</p>
     </div>
+            <div id="service-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        <button class="btn" onclick="closeModal()" style="width: 100%;">Закрити</button>
+    </div>
 <script>
+    function openModal(service) {
+    const modal = document.getElementById('service-modal');
+    const title = document.getElementById('modal-title');
+    const desc = document.getElementById('modal-desc');
+
+    if (service === 'anticor') {
+        title.innerText = '🛡️ Антикорозійна обробка';
+        desc.innerText = 'Ми проводимо повну чистку днища та наносимо захисний шар, щоб авто не гнило.';
+    } else if (service === 'welding') {
+        title.innerText = '👨‍🏭 Зварювальні роботи';
+        desc.innerText = 'Ремонт порогів та днища будь-якої складності.';
+    } else if (service === 'suspension') {
+        title.innerText = '⚙️ Ремонт ходової';
+        desc.innerText = 'Діагностика та заміна запчастин підвіски.';
+    }
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('service-modal').style.display = 'none';
+}
     function openModal(serviceType) {
     const modal = document.getElementById('service-modal');
     const title = document.getElementById('modal-title');
@@ -355,6 +383,7 @@ function closeModal() {
 </body>
 
 </html>
+
 
 
 
