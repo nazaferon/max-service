@@ -281,6 +281,9 @@
         max-width" 280px;
         text-align: center;
     }
+    .service-item {
+    cursor: pointer; 
+}
     </style>
 </head>
 <body>
@@ -289,18 +292,18 @@
     <p class="subtitle">Професійне обслуговування авто</p>
 
     <div class="services">
-        <div class="card">
+        <div class="service-item" onclick="scrollToForm">
             <span class="icon">🛡️</span>
             <h3>Антикор</h3>
             <p>Повна обробка днища, арок та прихованих порожнин. Використовуємо перевірені мастики для захисту від солі та вологи.</p>
         </div>
-        <div class="card">
+        <div class="service-item" onclick="scrollToForm">
             <span class="icon">⚙️</span>
             <h3>Ходова</h3>
             <p>Ремонт порогів, лонжеронів та підсилювачів. Робота аргоном та напівавтоматом. Повертаємо міцність кузову вашого авто.</p>
         
         </div>
-        <div class="card">
+        <div class="service-item" onclick="scrollToForm">
             <span class="icon">👨‍🔧</span>
             <h3>Зварювання</h3>
             <p>Ремонт порогів, лонжеронів та підсилювачів. Робота аргоном та напівавтоматом. Повертаємо міцність кузову вашого авто.</p>
@@ -315,7 +318,7 @@
     </a>
 </div>
 
-    <div class="booking-section" style="background: #1e1e1e; padding: 40px; border-radius: 20px; border: 1px solid #333; width: 100%; max-width: 400px; margin: 50px auto; text-align: center;">
+    <div class="booking-container" id="order-section" style="background: #1e1e1e; padding: 40px; border-radius: 20px; border: 1px solid #333; width: 100%; max-width: 400px; margin: 50px auto; text-align: center;">
         <h2 style="color: #FF5722; font-family: 'Oswald'; margin-bottom: 20px;">ЗАПИСАТИСЯ НА СЕРВІС</h2>
         <input type="text" class="form-input" placeholder="Ваше ім'я">  
         <input type="tel" class="form-input" placeholder="Ваш телефон"> 
@@ -355,6 +358,10 @@
         <button class="btn" style="width: 100%; margin-top: 10px">Відправити</button>
     </div>
 <script>
+    function scrollToForm() {
+    const element = document.getElementById("order-section");
+    element.scrollIntoView({ behavior: "smooth" });
+}
     function sendOrder() {
     const name = document.querySelector('input[type="text"]').value;
     const phone = document.querySelector('input[type="tel"]').value;
@@ -375,6 +382,7 @@
 </body>
 
 </html>
+
 
 
 
