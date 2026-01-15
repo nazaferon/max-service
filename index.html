@@ -400,12 +400,26 @@
     </div>
 <script>
     
+    function sendOrder() {
+    // Шукаємо поля за класом, який ми їм дали
+    const nameInput = document.querySelector('.form-input[type="text"]');
+    const phoneInput = document.querySelector('.form-input[type="tel"]');
+
+    // Отримуємо значення
+    const name = nameInput.value;
+    const phone = phoneInput.value;
+
     if (name === "" || phone === "") {
         alert("Будь ласка, заповніть усі поля!");
         return;
     }
 
-    alert("Дякуємо, " + name + "! Ваша заявка прийнята. Номер: " + phone);
+    alert("Дякуємо, " + name + "! Заявка прийнята.");
+    
+    // Очищуємо поля
+    nameInput.value = "";
+    phoneInput.value = "";
+}
     
     
     document.querySelector('input[type="text"]').value = "";
@@ -416,6 +430,7 @@
 </body>
 
 </html>
+
 
 
 
