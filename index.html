@@ -396,28 +396,50 @@
         <button class="btn" style="width: 100%; margin-top: 10px">Відправити</button>
     </div>
 <script>
-    
-   function sendOrder() {
-    // 1. Беремо значення з полів за їх ID
-    const nameValue = document.getElementById('name').value;
-    const phoneValue = document.getElementById('phone').value;
+  function sendOrder() {
+    // 1. Отримуємо дані з полів (переконайся, що в HTML у полів є id="name" та id="phone")
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
 
-    // 2. Перевіряємо, чи вони не порожні
-    if (nameValue.trim() !== "" && phoneValue.trim() !== "") {
-        alert("Дякуємо, " + nameValue + "! Ми отримали ваш номер: " + phoneValue);
-        
-        // 3. Очищаємо поля після успішної відправки
-        document.getElementById('name').value = "";
-        document.getElementById('phone').value = "";
-    } else {
+    // 2. Перевірка на порожні поля
+    if (name.trim() === "" || phone.trim() === "") {
         alert("Будь ласка, заповніть усі поля!");
+        return;
     }
+
+    // 3. Твої секретні дані (ВСТАВ СВОЇ ЗНАЧЕННЯ ТУТ)
+    const botToken = "ВСТАВ_СЮДИ_API_TOKEN_ЯКИЙ_ДАВ_BOTFATHER";
+    const chatId = "ВСТАВ_СЮДИ_ТВІЙ_ID_ВІД_USERINFOBOT";
+
+    // 4. Формуємо текст повідомлення
+    const message = `🚀 НОВА ЗАЯВКА!\n👤 Клієнт: ${name}\n📞 Телефон: ${phone}`;
+
+    // 5. Формуємо посилання для запиту до Telegram API
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+    // 6. Відправляємо запит у Telegram без перезавантаження сторінки
+    fetch(url)
+        .then(response => {
+            if (response.ok) {
+                alert("Дякуємо, " + name + "! Заявка успішно надіслана. Ми скоро зателефонуємо!");
+                // Очищаємо поля після відправки
+                document.getElementById('name').value = "";
+                document.getElementById('phone').value = "";
+            } else {
+                alert("Помилка! Можливо, ви ввели неправильний Токен або ID.");
+            }
+        })
+        .catch(error => {
+            alert("Помилка мережі. Перевірте з'єднання з інтернетом.");
+            console.error('Помилка:', error);
+        });
 }
 </script>
    
 </body>
 
 </html>
+
 
 
 
