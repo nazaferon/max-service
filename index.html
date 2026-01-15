@@ -312,6 +312,11 @@
     border-radius: 15px;
     text-align: center;
 }
+    .booking-container, .service-item {
+    flex-shrink: 0;       /* Забороняє блокам стискатися менше їхнього вмісту */
+    min-width: 300px;     /* Встановлює комфортну ширину смужки */
+    margin: 10px;         /* Додає невеликий "повітряний" простір між ними */
+}
     </style>
 </head>
 <body>
@@ -393,6 +398,7 @@
 </body>
 
 </html>
+
 
 
 
