@@ -353,9 +353,9 @@
 
     <div class="booking-container" id="order-section">
         <h3>ЗАПИСАТИСЯ НА СЕРВІС</h3>
-        <input type="text" class="form-input" placeholder="Ваше ім'я">
-        <input type="tel" class="form-input" placeholder="Ваш телефон">
-        <button onclick="sendOrder()" class="btn">ВІДПРАВИТИ</button>
+        <input type="text" id="name" class="form-input" placeholder="Ваше ім'я">
+<input type="tel" id="phone" class="form-input" placeholder="Ваш телефон">
+<button onclick="sendOrder()" class="btn">ВІДПРАВИТИ</button>
     </div>
     <div class="contact-section" style="text-align: center; margin-top: 40px;">
     <h2>Контакти</h2>
@@ -397,36 +397,28 @@
     </div>
 <script>
     
-    function sendOrder() {
-    // Шукаємо поля за класом, який ми їм дали
-    const nameInput = document.querySelector('.form-input[type="text"]');
-    const phoneInput = document.querySelector('.form-input[type="tel"]');
+   function sendOrder() {
+    // 1. Беремо значення з полів за їх ID
+    const nameValue = document.getElementById('name').value;
+    const phoneValue = document.getElementById('phone').value;
 
-    // Отримуємо значення
-    const name = nameInput.value;
-    const phone = phoneInput.value;
-
-    if (name === "" || phone === "") {
+    // 2. Перевіряємо, чи вони не порожні
+    if (nameValue.trim() !== "" && phoneValue.trim() !== "") {
+        alert("Дякуємо, " + nameValue + "! Ми отримали ваш номер: " + phoneValue);
+        
+        // 3. Очищаємо поля після успішної відправки
+        document.getElementById('name').value = "";
+        document.getElementById('phone').value = "";
+    } else {
         alert("Будь ласка, заповніть усі поля!");
-        return;
     }
-
-    alert("Дякуємо, " + name + "! Заявка прийнята.");
-    
-    // Очищуємо поля
-    nameInput.value = "";
-    phoneInput.value = "";
 }
-    
-    
-    document.querySelector('input[type="text"]').value = "";
-    document.querySelector('input[type="tel"]').value = "";
-} 
 </script>
    
 </body>
 
 </html>
+
 
 
 
