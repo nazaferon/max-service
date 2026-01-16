@@ -326,19 +326,37 @@
     flex-direction: column;
     justify-content: flex-start;
 }
-      header {
+    .main-header {
     display: flex;
-    flex-direction: column; /* Текст під логотипом */
-    align-items: center;    /* Центрування */
-    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
 }
 
-.main-logo {
-    width: 150px;           /* Налаштуй ширину під себе */
+.logo-wrapper {
+    width: 120px;
+    height: 120px;
+    background: #fff; /* Білий фон, щоб лого не зливалося */
+    border-radius: 50%; /* Робить лого круглим */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #FF5722; /* Помаранчева рамка в колір кнопок */
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.site-logo {
+    width: 90%; /* Лого буде трохи меншим за коло */
     height: auto;
-    margin-bottom: 10px;
-    border-radius: 8px;     /* Заокруглення кутів */
-}   
+}
+
+.subtitle {
+    color: #FF5722;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
     </style>
 </head>
 <body>
@@ -456,6 +474,7 @@
 </body>
 
 </html>
+
 
 
 
