@@ -342,14 +342,22 @@
     margin: 0 auto 15px auto;   /* Центрує і дає відступ знизу */
     border-radius: 10px;        /* Заокруглює гострі кути */
 }
-
+.header-logo {
+    width: 150px !important;    /* Фіксована ширина */
+    height: 150px !important;   /* Фіксована висота */
+    object-fit: contain !important; /* Зберігає пропорції всередині квадрата */
+    display: block !important;
+    margin: 0 auto 10px auto !important; /* Центрує картинку */
+    border-radius: 50%;         /* Робить її круглою (за бажанням) */
+    border: 3px solid #FF5722;  /* Помаранчева рамка як у кнопок */
+}
     </style>
 </head>
 <body>
-<div class="header-logo">
-    <img src="logo.png" alt="Logo" class="logo-img">
-    <div class="text_container">
+<header style="text-align: center; padding: 20px;">
+    <img src="logo.jpg" class="header-logo" alt="Max Service Logo">
     <h1>MAX SERVICE</h1>
+</header>
     <p class="subtitle">Професійне обслуговування авто</p>
    <div class="main-wrapper"> <div class="service-item">
         <span class="icon">🛡️</span>
@@ -460,6 +468,7 @@
 </body>
 
 </html>
+
 
 
 
