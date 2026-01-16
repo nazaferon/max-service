@@ -333,14 +333,14 @@
     padding: 40px 20px;
     background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
 }
-.site-logo {
-    width: 150px;       /* Встанови ширину, яка тобі подобається (наприклад, 100px або 150px) */
-    height: auto;        /* Це важливо, щоб картинка не сплющилась */
-    border-radius: 10px; /* Можна трохи заокруглити кути */
-    margin-bottom: 15px;
-}
-    img {
-    max-width: 200px; /* Це змусить будь-яке завелике фото стати нормальним */
+/* Це правило змусить логотип змінити розмір, навіть якщо щось йому заважає */
+.site-logo, .main-logo, header img {
+    width: 120px !important;    /* Спробуй поставити 120 або навіть 100 */
+    max-width: 120px !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto 15px auto;   /* Центрує і дає відступ знизу */
+    border-radius: 10px;        /* Заокруглює гострі кути */
 }
 
     </style>
@@ -460,6 +460,7 @@
 </body>
 
 </html>
+
 
 
 
